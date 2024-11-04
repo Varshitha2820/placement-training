@@ -1,0 +1,552 @@
+//sum by using the scanner//
+
+import java.util.Scanner;
+class HelloWorld {
+    public static void main(String[] args) {
+        int a;
+        Scanner scan=new Scanner(System.in);
+        System.out.println("ENTER A VALUE:");
+        a=scan.nextInt();
+        System.out.println("a="+a);
+        int b;
+        System.out.println("ENTER A VALUE:");
+        b=scan.nextInt();
+        System.out.println("b="+b);
+       }
+}
+-------------------------------------------
+LOGICAL SYMBOLS
+-------------------------------------------
+AND-&
+OR-|
+NOT-~
+XOR-^
+-------------------------------------------
+BIT MANIPULATION
+class HelloWorld {
+    public static void main(String[] args) {
+        int a=5,b=7;
+        a=a^b;
+        b=a^b;
+        a=a^b;
+        System.out.println(a);
+        System.out.println(b);
+    }
+}
+EXPLANATION:
+
+a=5 ,b=7
+in binary they can be given as 101,111
+
+a=a^b  | a=a^b[step-1]    |b=a^b[step-2]  |a=a^b[step-3]
+b=a^b  |=101^111          |=010^111       |=010^101
+a=a^b  |=010              |=101           |=010
+       |b=111             |a=010          |a=111,b=101
+----------------------------------------------------------
+EVEN ODD PROGRAM IN JAVA WITHOUT USING MODULUS
+
+class HelloWorld {
+    public static void main(String[] args) {
+        int a=5;
+        if((a&1)==0){
+        System.out.println("  even");}
+        else{
+        System.out.println("  odd");}
+    }
+}
+
+OUTPUT:
+odd
+---------------------------------------------------------
+LEAP YEAR 
+import java.util.Scanner;
+class HelloWorld {
+    public static void main(String[] args) {
+    int year;
+    Scanner scan=new Scanner(System.in);
+    System.out.println("ENTER A VALUE:");
+    year=scan.nextInt();
+    
+    boolean LeapYear;
+    LeapYear = (year % 4 == 0);
+    LeapYear = LeapYear && (year % 100 != 0 || year % 400 == 0);
+
+    if (LeapYear) {
+      System.out.println(year + " is a leap year.");
+    } else {
+      System.out.println(year + " is not a leap year.");
+    }
+  }/
+}
+
+OUTPUT:
+ENTER A VALUE:
+2024
+2024 is a leap year.
+------------------------------------------------------------------------
+greater number from given three numbers.
+
+import java.util.Scanner;
+class HelloWorld {
+    public static void main(String[] args) {
+    int a;
+    Scanner scan=new Scanner(System.in);
+    System.out.println("ENTER A VALUE:");
+    a=scan.nextInt();
+    System.out.println("a="+a);
+    int b;
+    System.out.println("ENTER A VALUE:");
+    b=scan.nextInt();
+    System.out.println("b="+b);
+    int c;
+    System.out.println("ENTER A VALUE:");
+    c=scan.nextInt();
+    System.out.println("c="+c);
+    if((a>b&&b>a)){
+        System.out.println("number a is greater:"+a);}
+    else if((b>a&&b>c)){
+         System.out.println("number b is greater:"+b);}   
+    else{
+        System.out.println("number c is greater:"+c);} 
+    
+    }
+}
+
+OUTPUT:
+ENTER A VALUE:
+2
+a=2
+ENTER A VALUE:
+5
+b=5
+ENTER A VALUE:
+1
+c=1
+number b is greater:5
+-----------------------------------------------------------
+perfect square number
+import java.util.Scanner;
+class HelloWorld {
+    public static void main(String[] args) {
+
+        int a;
+        Scanner scan=new Scanner(System.in);
+        System.out.println("ENTER A VALUE:");
+        a=scan.nextInt();
+        
+        double x=Math.sqrt(a);
+        if((x*x)==a){
+            System.out.println("perfect square");
+        }else{
+            System.out.println("not a perfect square");
+        }
+    }
+}
+OUTPUT:
+ENTER A VALUE:
+64
+perfect square
+--------------------------------------------------------
+reverse the given number
+
+class HelloWorld {
+    public static void main(String[] args)   
+{  
+int  n = 2005, reverse= 0,digit;  
+
+while(n!=0){
+    digit=n%10;
+    reverse=reverse*10+digit;
+    n=n/10;
+}
+System.out.println( reverse);  
+}  
+}  
+
+OUTPUT:
+5002
+-----------------------------------------------------
+for a FOR loop time complexity is O[n]
+time complexity is big o[n square]
+square number depends on the given nested if conditions
+the O[n] is doesn't depends on the value of n
+==>time compelexity depends on the no.of for loops
+for{
+}
+for{
+for{
+}
+}
+for
+{
+}
+==>loops-O[N]
+==>nested loops-O[n]==>the power is based on the no.of nested loops.
+==>sorting-O[N]
+==>recursion-O[2N]
+==>Binary search-[Nlog N]
+--------------------------------------------------------------
+XOR VALUE
+1-1
+2-3
+3-0
+4-4-n
+5-1-1
+6-7-n+1
+7-0-0
+8-8-n
+----------------------------------------------------------------
+xor operation
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner=new Scanner(System.in);
+        int a=scanner.nextInt();
+        int x=0;
+        for(int i=1;i<=a;i++){
+            x=x^i;
+        }
+        
+        System.out.println(x);
+    }
+}
+OUTPUT:
+12345
+1
+-----------------------------------------------------------------
+another method of xor operation
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner=new Scanner(System.in);
+        int a=scanner.nextInt();
+        if(a%4==1)System.out.println(1);
+        if(a%4==2)System.out.println(a+1);
+        if(a%4==3)System.out.println(0);
+        if(a%4==0)System.out.println(a);
+       
+    }
+}
+OUTPUT:
+8
+8
+------------------------------------------------------------------
+another method of xor operation
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner=new Scanner(System.in);
+        int l=scanner.nextInt();
+        int r=scanner.nextInt();
+        int x=0;
+        for(int i=l;i<=r;i++){
+            x=x^i;
+        }
+        System.out.println(x);
+       
+    }
+}
+OUTPUT:
+5
+4
+0
+----------------------------------------------------------------
+
+another method of xor operation
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner=new Scanner(System.in);
+        int l=scanner.nextInt();
+        int r=scanner.nextInt();
+        int a=Xor(r);
+        int b=Xor(l-1);
+        for(int i=l;i<=r;i++);
+        System.out.println(a^b);
+       
+    }
+    public static int Xor(int n){
+        if(n%4==1)return 1;
+        if(n%4==2)return n+1;
+        if(n%4==3)return 0;
+        return n;
+    }
+}
+OUTPUT:
+3
+6
+4
+---------------------------------------------------------------
+ ARRAY DECLARATION
+dataType[]arr;
+dataType[]arr;
+dataType[]arr;
+
+1D ARRAY DECLARATION
+int a[]={10,20,30,40}
+----------------------------------------------------------------
+arr=[2,4,5,7,9,11]
+m=s+e/2=0+5/2=2
+if (arr[mid]==key) SOP("element present")                       [logic
+if (arr[mid]>key)  e=mid-1;[2,4]             key                [arry]
+if (arr[mid]<key)  s=mid+1;[7,9,11]    smaller key-right side
+                                       larger key-left side
+--------------------------------------------------------------------
+[2,4,6,7,8,10,11,12,15,20,21,25,27]
+key=21
+m=s+e/2=0+11/2=5==>s=m+1
+m=s+e/2=6+1/2=8==>s+m+1
+m=s+e/2=9+1/2=10
+---------------------------------------------------------------------
+LINEAR SERACH
+import java.util.Scanner;
+public class Linearsearch{
+    public static void main(String [] args){
+        Scanner scanner=new Scanner(System.in);
+        System.out.print("Enter the size of the array: ");
+        int s=scanner.nextInt();
+        int arr[]=new int[s];
+        System.out.print("Enter the elements of the array:");
+        for(int i=0;i<s;i++){
+            arr[i]=scanner.nextInt();
+        }
+        int key=20,c=0;
+        for(int i=0;i<s;i++){
+            if(arr[i]==key){ 
+                c++;
+                break;
+        }
+        if(c>0) System.out.println("The element is present in the array");
+        else System.out.println("The element is not present in the array");
+}
+
+}
+}
+OUTPUT:
+ENTER THE SIZE:5
+Enter the elements of the array:1
+The element is not present in the array
+---------------------------------------------------------------------------
+BINARY SEARCH
+import java.util.Scanner;
+public class Binarysearch{
+    public static void main(String [] args){
+        Scanner scanner=new Scanner(System.in);
+        System.out.print("Enter the size of the array: ");
+        int n=scanner.nextInt();
+        int arr[]=new int[n];
+        System.out.print("Enter the elements of the array:");
+        for(int i=0;i<n;i++){
+            arr[i]=scanner.nextInt();
+        }
+        int key=7,s=0,e=arr.length-1,c=0;
+            while (s <= e) {
+                int m = (s + e) / 2;
+                if (arr[m] == key) {
+                    c++; 
+                    break;
+                } 
+                else if (arr[m] < key) s = m + 1; 
+                else  e = m - 1; 
+            }
+        if(c>0) System.out.println("The element is present in the array");
+        else System.out.println("The element is not present in the array");
+}
+}
+OUTPUT:
+Enter the size of the array: 3
+Enter the elements of the array:56 5 4
+The element is not present in the array
+----------------------------------------------------------------------------
+REVERSE THE ARRAY
+import java.util.Scanner;
+public class reverse{
+    public static void main(String [] args){
+        Scanner scanner=new Scanner(System.in);
+        System.out.print("Enter the size of the array: ");
+        int size=scanner.nextInt();
+        int[] array=new int[size];
+        System.out.print("Enter the elements of the array:");
+        for(int i=0;i<size;i++){
+            array[i]=scanner.nextInt();
+        }
+        for(int i=size-1; i>=0; i--) 
+        System.out.print(array[i]+"");
+}
+}
+OUTPUT:
+Enter the size of the array: 3
+Enter the elements of the array:2 4 6
+642
+----------------------------------------------------------------------------
+SWAP THE NUMBER
+import java.util.Scanner;
+public class reverse{
+    public static void main(String [] args){
+        Scanner scanner=new Scanner(System.in);
+        System.out.print("Enter the size of the array: ");
+        int size=scanner.nextInt();
+        int[] array=new int[size];
+        System.out.print("Enter the elements of the array:");
+        for(int i=0;i<size;i++){
+            array[i]=scanner.nextInt();
+        }
+        int temp;
+        for(int i=0; i<size/2; i++){
+            temp=array[0];
+            array[0]=array[size-1];
+            array[size-1]=temp;
+        }
+        for(int i=0;i<size;i++)
+        System.out.println(array[i]+" ");
+}
+}
+OUTPUT:
+Enter the size of the array: 6
+Enter the elements of the array:5 2 1 9 6 7 
+7 
+2 
+1 
+9 
+6 
+5 
+--------------------------------------------------------------------------------
+ROTATION OF FIRST HALF
+import java.util.Scanner;
+public class reverse{
+    public static void main(String [] args){
+        Scanner scanner=new Scanner(System.in);
+        System.out.print("Enter the size of the array: ");
+        int size=scanner.nextInt();
+        int[] array=new int[size];
+        System.out.print("Enter the elements of the array:");
+        for(int i=0;i<size;i++){
+            array[i]=scanner.nextInt();
+        }
+        int temp;
+        for(int i=0,j=(size/2)-1; i<size/4; i++,j--){
+            temp=array[i];
+            array[i]=array[j-i];
+            array[j-i]=temp;
+        }
+        for(int i=0;i<size;i++)
+        System.out.println(array[i]+" ");
+}
+}
+OUTPUT:
+Enter the size of the array: 6
+Enter the elements of the array:2 9 7 5 6 3
+7 
+9 
+2 
+5 
+6 
+3 
+-----------------------------------------------------------------------------
+ROTATION  OF SECOND HALF 
+import java.util.Scanner;
+public class reverse{
+    public static void main(String [] args){
+        Scanner scanner=new Scanner(System.in);
+        System.out.print("Enter the size of the array: ");
+        int size=scanner.nextInt();
+        int[] array=new int[size];
+        System.out.print("Enter the elements of the array:");
+        for(int i=0;i<size;i++){
+            array[i]=scanner.nextInt();
+        }
+        int temp;
+        for(int i=(size/2),j=size-1,k=0; k<size/4; i++,j--,k++){
+            temp=array[i];
+            array[i]=array[j-k];
+            array[j-k]=temp;
+        }
+        for(int i=0;i<size;i++)
+        System.out.println(array[i]+" ");
+}
+}
+OUTPUT:
+Enter the size of the array: 6
+Enter the elements of the array:9 8 5 3 1 2
+9 
+8 
+5 
+2 
+1 
+3
+----------------------------------------------------------------------------
+COUNTING THE NUMBERS PRESENT IN GIVEN ARRAY
+import java.util.Scanner;
+public class reverse{
+    public static void main(String [] args){
+        Scanner scanner=new Scanner(System.in);
+        System.out.print("Enter the size of the array: ");
+        int size=scanner.nextInt();
+        int[] array=new int[size];
+        System.out.print("Enter the elements of the array:");
+        for(int i=0;i<size;i++){
+            array[i]=scanner.nextInt();
+        }
+        int[] hash={0,0,0,0,0,0,0,0,0,0,0};
+        for(int i=0;i<size;i++){
+            hash[array[i]]++;
+        }
+        for(int i=0;i<10;i++){
+            System.out.println(i+"-"+hash[i]);
+ }
+}
+}
+OUTPUT:
+Enter the size of the array: 6
+Enter the elements of the array:3 5 8 9 0 6
+0-1
+1-0
+2-0
+3-1
+4-0
+5-1
+6-1
+7-0
+8-1
+9-1
+--------------------------------------------------------------------------
+PRESENTS GIVEN BY WHICH PERSON
+import java.util.Scanner;
+public class Main{
+    public static void main(String [] args){
+        Scanner scanner=new Scanner(System.in);
+        int n=scanner.nextInt();
+        int k;
+        int[] array=new int[n+1];
+        for(int i=1;i<=n;i++){
+            k=scanner.nextInt();
+            array[k]=i;
+        }
+        for(int i=1;i<=n;i++)
+        System.out.println(array[i]+" ");
+}
+}
+OUTPUT:
+5
+4 3 2 1 5
+4 
+3 
+2 
+1 
+5 
+----------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
